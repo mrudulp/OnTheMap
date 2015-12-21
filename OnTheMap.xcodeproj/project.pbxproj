@@ -97,8 +97,8 @@
 		3E2493B51C27EF7E001806D9 /* OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				3EB0DEB81C285B1A00AEC063 /* Controllers */,
 				3E2493B61C27EF7E001806D9 /* AppDelegate.swift */,
-				3E2493B81C27EF7E001806D9 /* ViewController.swift */,
 				3E2493BA1C27EF7E001806D9 /* Main.storyboard */,
 				3E2493BD1C27EF7F001806D9 /* Assets.xcassets */,
 				3E2493BF1C27EF7F001806D9 /* LaunchScreen.storyboard */,
@@ -123,6 +123,14 @@
 				3E2493D81C27EF7F001806D9 /* Info.plist */,
 			);
 			path = OnTheMapUITests;
+			sourceTree = "<group>";
+		};
+		3EB0DEB81C285B1A00AEC063 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E2493B81C27EF7E001806D9 /* ViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,6 +490,7 @@
 				3E2493DD1C27EF7F001806D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E2493DE1C27EF7F001806D9 /* Build configuration list for PBXNativeTarget "OnTheMapTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +499,7 @@
 				3E2493E01C27EF7F001806D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E2493E11C27EF7F001806D9 /* Build configuration list for PBXNativeTarget "OnTheMapUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +508,7 @@
 				3E2493E31C27EF7F001806D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

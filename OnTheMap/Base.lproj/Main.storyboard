@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,58 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iLT-ag-W8K" userLabel="PasswordTextField">
+                                <rect key="frame" x="198" y="285" width="204" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="204" id="uvO-5O-oZ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uCv-XG-fbd" userLabel="UserNameTextField">
+                                <rect key="frame" x="198" y="235" width="204" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="204" id="OSe-cv-Tdl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiC-rj-IhF" userLabel="LoginButton">
+                                <rect key="frame" x="198" y="331" width="204" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="204" id="G6l-J8-q9z"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iLT-ag-W8K" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AQB-8o-uC9"/>
+                            <constraint firstItem="uCv-XG-fbd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H33-uH-8Dh"/>
+                            <constraint firstItem="iLT-ag-W8K" firstAttribute="top" secondItem="uCv-XG-fbd" secondAttribute="bottom" constant="20" id="M3Y-M2-qXw"/>
+                            <constraint firstItem="iLT-ag-W8K" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YGU-fM-CXL"/>
+                            <constraint firstItem="NiC-rj-IhF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dWg-bD-q9c"/>
+                            <constraint firstItem="iLT-ag-W8K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s96-SF-hvo"/>
+                            <constraint firstItem="NiC-rj-IhF" firstAttribute="top" secondItem="iLT-ag-W8K" secondAttribute="bottom" constant="16" id="sJ2-U8-4Vx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="NiC-rj-IhF" id="neT-3K-b1x"/>
+                        <outlet property="passwordTextField" destination="iLT-ag-W8K" id="W6O-tD-8Hh"/>
+                        <outlet property="usernameTextField" destination="uCv-XG-fbd" id="wXt-8n-gGD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="306"/>
         </scene>
     </scenes>
 </document>
