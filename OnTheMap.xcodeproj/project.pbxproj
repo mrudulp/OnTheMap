@@ -14,6 +14,16 @@
 		3E2493C11C27EF7F001806D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2493BF1C27EF7F001806D9 /* LaunchScreen.storyboard */; };
 		3E2493CC1C27EF7F001806D9 /* OnTheMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2493CB1C27EF7F001806D9 /* OnTheMapTests.swift */; };
 		3E2493D71C27EF7F001806D9 /* OnTheMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2493D61C27EF7F001806D9 /* OnTheMapUITests.swift */; };
+		3E4FF1D11C75D1EE0028A4D1 /* OTMHttpModerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4FF1D01C75D1EE0028A4D1 /* OTMHttpModerator.swift */; };
+		3E6EFE081C68E0510011BDCB /* PinListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFE071C68E0510011BDCB /* PinListController.swift */; };
+		3E6EFE0A1C68E0610011BDCB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFE091C68E0610011BDCB /* MapViewController.swift */; };
+		3E6EFE0D1C68F0AD0011BDCB /* LocatorsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFE0C1C68F0AD0011BDCB /* LocatorsDB.swift */; };
+		3E6EFE0F1C68F3650011BDCB /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFE0E1C68F3650011BDCB /* Locator.swift */; };
+		3E8BCEE71C7DECE00058A0C2 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8BCEE61C7DECE00058A0C2 /* MapPin.swift */; };
+		3EA34C9B1C6C74BF005C3D87 /* OTMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA34C9A1C6C74BF005C3D87 /* OTMConstants.swift */; };
+		3EA34C9D1C6C77B9005C3D87 /* OTMHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA34C9C1C6C77B9005C3D87 /* OTMHTTPClient.swift */; };
+		3EB0DEBA1C28653200AEC063 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB0DEB91C28653200AEC063 /* MapKit.framework */; };
+		3EEECB8B1C7B8D120097573D /* TextSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEECB8A1C7B8D120097573D /* TextSpinner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +57,16 @@
 		3E2493D21C27EF7F001806D9 /* OnTheMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2493D61C27EF7F001806D9 /* OnTheMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapUITests.swift; sourceTree = "<group>"; };
 		3E2493D81C27EF7F001806D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E4FF1D01C75D1EE0028A4D1 /* OTMHttpModerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMHttpModerator.swift; sourceTree = "<group>"; };
+		3E6EFE071C68E0510011BDCB /* PinListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinListController.swift; sourceTree = "<group>"; };
+		3E6EFE091C68E0610011BDCB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3E6EFE0C1C68F0AD0011BDCB /* LocatorsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocatorsDB.swift; sourceTree = "<group>"; };
+		3E6EFE0E1C68F3650011BDCB /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Locator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3E8BCEE61C7DECE00058A0C2 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
+		3EA34C9A1C6C74BF005C3D87 /* OTMConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OTMConstants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3EA34C9C1C6C77B9005C3D87 /* OTMHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OTMHTTPClient.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3EB0DEB91C28653200AEC063 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3EEECB8A1C7B8D120097573D /* TextSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSpinner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EB0DEBA1C28653200AEC063 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +98,7 @@
 		3E2493AA1C27EF7E001806D9 = {
 			isa = PBXGroup;
 			children = (
+				3EB0DEB91C28653200AEC063 /* MapKit.framework */,
 				3E2493B51C27EF7E001806D9 /* OnTheMap */,
 				3E2493CA1C27EF7F001806D9 /* OnTheMapTests */,
 				3E2493D51C27EF7F001806D9 /* OnTheMapUITests */,
@@ -97,6 +119,8 @@
 		3E2493B51C27EF7E001806D9 /* OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				3EEECB891C7B8CF50097573D /* View */,
+				3E6EFE0B1C68F0210011BDCB /* Model */,
 				3EB0DEB81C285B1A00AEC063 /* Controllers */,
 				3E2493B61C27EF7E001806D9 /* AppDelegate.swift */,
 				3E2493BA1C27EF7E001806D9 /* Main.storyboard */,
@@ -125,12 +149,35 @@
 			path = OnTheMapUITests;
 			sourceTree = "<group>";
 		};
+		3E6EFE0B1C68F0210011BDCB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3EA34C9A1C6C74BF005C3D87 /* OTMConstants.swift */,
+				3E6EFE0C1C68F0AD0011BDCB /* LocatorsDB.swift */,
+				3E6EFE0E1C68F3650011BDCB /* Locator.swift */,
+				3EA34C9C1C6C77B9005C3D87 /* OTMHTTPClient.swift */,
+				3E4FF1D01C75D1EE0028A4D1 /* OTMHttpModerator.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		3EB0DEB81C285B1A00AEC063 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				3E2493B81C27EF7E001806D9 /* ViewController.swift */,
+				3E6EFE071C68E0510011BDCB /* PinListController.swift */,
+				3E6EFE091C68E0610011BDCB /* MapViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3EEECB891C7B8CF50097573D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3EEECB8A1C7B8D120097573D /* TextSpinner.swift */,
+				3E8BCEE61C7DECE00058A0C2 /* MapPin.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +248,12 @@
 				TargetAttributes = {
 					3E2493B21C27EF7E001806D9 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 4QXUKFR6EC;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3E2493C61C27EF7F001806D9 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -264,8 +317,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EEECB8B1C7B8D120097573D /* TextSpinner.swift in Sources */,
+				3E8BCEE71C7DECE00058A0C2 /* MapPin.swift in Sources */,
+				3E6EFE081C68E0510011BDCB /* PinListController.swift in Sources */,
 				3E2493B91C27EF7E001806D9 /* ViewController.swift in Sources */,
+				3EA34C9D1C6C77B9005C3D87 /* OTMHTTPClient.swift in Sources */,
+				3E4FF1D11C75D1EE0028A4D1 /* OTMHttpModerator.swift in Sources */,
+				3E6EFE0F1C68F3650011BDCB /* Locator.swift in Sources */,
+				3E6EFE0D1C68F0AD0011BDCB /* LocatorsDB.swift in Sources */,
+				3EA34C9B1C6C74BF005C3D87 /* OTMConstants.swift in Sources */,
 				3E2493B71C27EF7E001806D9 /* AppDelegate.swift in Sources */,
+				3E6EFE0A1C68E0610011BDCB /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,10 +467,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OnTheMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sv.OnTheMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -416,10 +481,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OnTheMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sv.OnTheMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -27,11 +27,42 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onLoginPressed(sender: AnyObject) {
+        // Create and add the view to the screen.
+        let progressHUD = ProgressHUD(text: "Loading Student Data")
+        self.view.addSubview(progressHUD)
+        // All done!
+        
+        self.view.backgroundColor = UIColor.blackColor()
+        
+        OTMHTTPClient.sharedInstance().getStudentLocations { (result, errorString) -> Void in
+            switch result {
+                case .PASS:
+                    print("Student data fetch successful")
+                    self.showPinView()
+                case .FAIL:
+                    print("Failed to Fetch Student Data with Error \(errorString)")
+            }
+        }
+    }
+    
+    func showPinView(){
+        
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("TabViewController")
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+    }
+    
+    
     func configureUI(){
         /* Configure background gradient */
         self.view.backgroundColor = UIColor.clearColor()
-        let colorTop = UIColor(red: 0.748, green: 0.254, blue: 0.0, alpha: 1.0).CGColor
+/*        let colorTop = UIColor(red: 0.748, green: 0.254, blue: 0.0, alpha: 1.0).CGColor
         let colorBottom = UIColor(red: 0.954, green: 0.054, blue: 0.08, alpha: 1.0).CGColor
+*/
+        let colorTop = UIColor(red: 0.211, green: 0.254, blue: 0.254, alpha: 1.0).CGColor
+        let colorBottom = UIColor(red: 0.748, green: 0.254, blue: 0.0, alpha: 1.0).CGColor
+        //        let colorBottom = UIColor(red: 0.211, green: 0.084, blue: 0.0, alpha: 1.0).CGColor
         self.backgroundGradient = CAGradientLayer()
         self.backgroundGradient!.colors = [colorTop, colorBottom]
         self.backgroundGradient!.locations = [0.0, 1.0]
