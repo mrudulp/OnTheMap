@@ -9,11 +9,7 @@
 import Foundation
 import UIKit
 
-class PinListController: UITableViewController{//UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
-//    @IBOutlet weak var tableView: UITableView!
-    
-    var maxRows = 20
+class PinListController: UITableViewController{
     
     required init(coder aDecoder: NSCoder)
     {

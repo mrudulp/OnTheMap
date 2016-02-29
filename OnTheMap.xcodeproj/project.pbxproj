@@ -19,6 +19,7 @@
 		3E6EFE0A1C68E0610011BDCB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFE091C68E0610011BDCB /* MapViewController.swift */; };
 		3E6EFE0D1C68F0AD0011BDCB /* LocatorsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFE0C1C68F0AD0011BDCB /* LocatorsDB.swift */; };
 		3E6EFE0F1C68F3650011BDCB /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFE0E1C68F3650011BDCB /* Locator.swift */; };
+		3E75E57C1C805F0F004E7F88 /* OTMAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E75E57B1C805F0F004E7F88 /* OTMAnnotations.swift */; };
 		3E8BCEE71C7DECE00058A0C2 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8BCEE61C7DECE00058A0C2 /* MapPin.swift */; };
 		3EA34C9B1C6C74BF005C3D87 /* OTMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA34C9A1C6C74BF005C3D87 /* OTMConstants.swift */; };
 		3EA34C9D1C6C77B9005C3D87 /* OTMHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA34C9C1C6C77B9005C3D87 /* OTMHTTPClient.swift */; };
@@ -62,6 +63,7 @@
 		3E6EFE091C68E0610011BDCB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3E6EFE0C1C68F0AD0011BDCB /* LocatorsDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocatorsDB.swift; sourceTree = "<group>"; };
 		3E6EFE0E1C68F3650011BDCB /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Locator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3E75E57B1C805F0F004E7F88 /* OTMAnnotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMAnnotations.swift; sourceTree = "<group>"; };
 		3E8BCEE61C7DECE00058A0C2 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		3EA34C9A1C6C74BF005C3D87 /* OTMConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OTMConstants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3EA34C9C1C6C77B9005C3D87 /* OTMHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OTMHTTPClient.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -157,6 +159,7 @@
 				3E6EFE0E1C68F3650011BDCB /* Locator.swift */,
 				3EA34C9C1C6C77B9005C3D87 /* OTMHTTPClient.swift */,
 				3E4FF1D01C75D1EE0028A4D1 /* OTMHttpModerator.swift */,
+				3E75E57B1C805F0F004E7F88 /* OTMAnnotations.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				3E6EFE0F1C68F3650011BDCB /* Locator.swift in Sources */,
 				3E6EFE0D1C68F0AD0011BDCB /* LocatorsDB.swift in Sources */,
 				3EA34C9B1C6C74BF005C3D87 /* OTMConstants.swift in Sources */,
+				3E75E57C1C805F0F004E7F88 /* OTMAnnotations.swift in Sources */,
 				3E2493B71C27EF7E001806D9 /* AppDelegate.swift in Sources */,
 				3E6EFE0A1C68E0610011BDCB /* MapViewController.swift in Sources */,
 			);
