@@ -31,6 +31,26 @@ class OnTheMapUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCUIDevice.sharedDevice().orientation = .FaceUp
+        XCUIDevice.sharedDevice().orientation = .FaceUp
+        
+        let app = XCUIApplication()
+        app.buttons["Login"].tap()
+        
+       // app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.tap()
+        //app.otherElements["Michal Tubis"].tap()
+        let label = app.tabBars.buttons["List"]
+        let exists = NSPredicate(format: "exists == true")
+        expectationForPredicate(exists, evaluatedWithObject: label, handler: nil)
+//       app.otherElements["Michal Tubis"].tap()
+        waitForExpectationsWithTimeout(25, handler: nil)
+        let tabBarsQuery = app.tabBars
+        let listButton = tabBarsQuery.buttons["List"]
+        listButton.tap()
+        // Failed to find matching element please file bug (bugreport.apple.com) and provide output from Console.app
+        tabBarsQuery.buttons["Map"].tap()
+        listButton.tap()
+        
     }
     
 }
