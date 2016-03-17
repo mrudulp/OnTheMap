@@ -8,8 +8,11 @@
 
 import XCTest
 @testable import OnTheMap
+//@testable import
 
 class OnTheMapTests: XCTestCase {
+    
+//    var annotation:OTMAnnotation!
     
     override func setUp() {
         super.setUp()
@@ -21,7 +24,7 @@ class OnTheMapTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testAnnotationObjectCreation() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
    
