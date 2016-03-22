@@ -1,0 +1,180 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/docs
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# By default, fastlane will send which actions are used
+# No personal data is shared, more information on https://github.com/fastlane/enhancer
+# Uncomment the following line to opt out
+# opt_out_usage
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.66.0"
+
+# HACK:: Inorder to fix SSL errors (https://github.com/google/google-api-ruby-client/issues/253)
+cert_path = Gem.loaded_specs['google-api-client'].full_gem_path+'/lib/cacerts.pem'
+ENV['SSL_CERT_FILE'] = cert_path
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+    # If the GIT status is not clean, abort. We won't want to include junk in the build
+    #ensure_git_status_clean
+    #ENV['KEYCHAIN_NAME'] = "TempKeychain.keychain"
+  end
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+    # slack(
+    #   message: "Successfully deployed new App Update."
+    # )
+    notify "Fastlane succeeded '#{lane}'" unless Helper.is_ci? #if I'm running it locally, show a terminal OS X notification
+  end
+
+  error do |lane, exception|
+    # slack(
+    #   message: exception.message,
+    #   success: false
+    # )
+    notify "Fastlane failed '#{lane}'" unless Helper.is_ci? #if I'm running it locally, show a terminal OS X notification
+  end
+
+  private_lane :build_app do |options|
+
+    # This part is done only when the app is not for the "production" environment
+    if not options[:release]
+      # Modulate the color of the icons
+      color_icon(
+        modulation: "#{options[:modulation]}"
+      )
+      # Add the build number to the icon
+      build_number_icon
+    end
+
+    # Update the app name
+    app_name(
+      plist_path: "#{options[:project_name]}/Info.plist",
+      app_name: options[:app_name]
+    )
+
+    # Update the app identifier
+    update_app_identifier(
+      xcodeproj: "#{options[:project_name]}.xcodeproj",
+      plist_path: "#{options[:project_name]}/Info.plist",
+      app_identifier: options[:app_identifier]
+    )
+
+    # Version bump
+    increment_build_number(
+      build_number: options[:build_number]
+    )
+
+    # Build the app
+    gym(
+      scheme: "#{options[:scheme]}",
+      configuration: options[:configuration],
+    #  provisioning_profile_path: options[:profile],
+    #  codesigning_identity: options[:codesigning_identity],
+      export_method: options[:export_method],
+      sdk: "iphoneos", use_legacy_build_api: true
+    )
+
+  end
+
+  # Publish to Crashlytics
+  private_lane :publish_crashlytics do |options|
+
+    # Generate a changelog with GIT since the last successful build in Jenkins
+    changelog = sh("git log --graph --pretty=format:'%h -%d %s <%an>' --abbrev-commit #{ENV['GIT_PREVIOUS_SUCCESSFUL_COMMIT'] || 'HEAD^^^^^'}..HEAD")
+
+    # Increment the version number of your Xcode project
+    version = increment_version_number(bump_type: "patch")
+    # Send the app to Hockeyapp (fill in your API token!)
+    crashlytics(
+      api_token: "63eafe5244967175de6fd04384ff1d312495be7b",
+      build_secret: "7e8efed3e155cbddeb61867ebc0ad2ce2d589c55f46c3f59527a35a90791d1ab",
+      notes: "#{changelog.to_s}",
+      emails: ["mrudul.pendharkar@hubchat.com"],
+      notifications: "YES",
+      #release_type: options[:release_type]
+    )
+  end
+
+  desc "Submit a new Beta Build to Fabric without e-mail notifications"
+  lane :fabric do
+    gym(scheme: "OnTheMap", sdk: "iphoneos", use_legacy_build_api: true)
+    # Generate a changelog with GIT since the last successful build in Jenkins
+    changelog = sh("git log --graph --pretty=format:'%h -%d %s <%an>' --abbrev-commit #{ENV['GIT_PREVIOUS_SUCCESSFUL_COMMIT'] || 'HEAD^^^^^'}..HEAD")
+    # Increment the version number of your Xcode project
+    version = increment_version_number(bump_type: "patch")
+    # Send the app to Hockeyapp (fill in your API token!)
+    crashlytics(
+      api_token: "63eafe5244967175de6fd04384ff1d312495be7b",
+      build_secret: "7e8efed3e155cbddeb61867ebc0ad2ce2d589c55f46c3f59527a35a90791d1ab",
+      notes: "#{changelog.to_s}",
+      emails: "mrudul.pendharkar@hubchat.com",
+      notifications: "YES"
+    )
+  end
+
+  lane :fabric_iOS_alpha do
+    build_app(
+      # Not a production release
+      release: false,
+      # Modulate the colors of the icons by these degrees
+      modulation:66.6,
+      # Change name with α appended
+      app_name: "OnTheMap α",
+      # bundle id
+      app_identifier: "shreeV.OnTheMap.alpha",
+      # which configuration to use
+      configuration: "Alpha",
+      # project name (name of *.xcodeproj)
+      project_name:"OnTheMap",
+      # scheme to build
+      scheme:"OnTheMap",
+
+      build_number: "1000" #http://www.markschabacker.com/blog/2013/01/04/agvtool_with_new_projects/ to set key CURRENT_PROJECT_VERSION
+    )
+    publish_crashlytics(release_type:"2")
+  end
+end
+
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/docs/Platforms.md
+# All available actions: https://github.com/fastlane/fastlane/blob/master/docs/Actions.md
+
+# desc "Runs all the tests"
+# lane :test do
+#   scan
+# end
+#
+# desc "Submit a new Beta Build to Apple TestFlight"
+# desc "This will also make sure the profile is up to date"
+# lane :beta do
+#   # match(type: "appstore") # more information: https://codesigning.guide
+#   gym # Build your app - more options available
+#   pilot
+#
+#   # sh "your_script.sh"
+#   # You can also use other beta testing services here (run `fastlane actions`)
+# end
+#
+# desc "Deploy a new version to the App Store"
+# lane :appstore do
+#   # match(type: "appstore")
+#   # snapshot
+#   gym # Build your app - more options available
+#   deliver(force: true)
+#   # frameit
+# end
